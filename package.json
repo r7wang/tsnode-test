@@ -7,7 +7,15 @@
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js",
     "start:dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "npm run build && node build/client.js",
+    "test": "jest uspec",
+    "knex": "knex"
+  },
+  "jest": {
+    "testRegex": "(/__tests__/.*|src.*?\\.(ispec|uspec))\\.(ts)$",
+    "transform": {
+      ".(ts||tsx)": "ts-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,10 +29,22 @@
   },
   "homepage": "https://github.com/r7wang/tsnode-test#readme",
   "devDependencies": {
+    "@types/bookshelf": "^1.1.1",
+    "@types/jest": "^26.0.3",
+    "@types/knex": "^0.16.1",
     "@types/node": "^14.0.13",
+    "jest": "^26.1.0",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.1",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bookshelf": "^1.2.0",
+    "knex": "^0.21.1",
+    "koa": "^2.13.0",
+    "mysql": "^2.18.1"
   }
 }
