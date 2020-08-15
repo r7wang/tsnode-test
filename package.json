@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/index.js",
+    "start": "npm run build && node build/main.js",
     "start:dev": "nodemon",
     "client": "npm run build && node build/client.js",
     "test": "jest uspec",
